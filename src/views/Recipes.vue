@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div style="width: 40%;" slot="description" slot-scope="props">
+      <div style="width: 80%;" slot="description" slot-scope="props">
         <div>
           <h5>{{props.row.name}}</h5>
           <br>
@@ -155,58 +155,3 @@ export default {
   }
 };
 </script>
-
-<style>
-a, a:visited {
-    color: white;
-}
-.span-icon-m {
-  display: inline-block;
-  position: absolute;
-  left: 270px;
-}
-.circuloCinza {
-  border-radius: 100%;
-  display: inline-block;
-  height: 120px;
-  width: 120px;
-  background-color: #ccccca;
-}
-
-.viewRecipe{
-  font-weight: bold;
-  color: white;
-  font-size: 20px;
-}
-
-.circuloLaranja {
-  border-radius: 100%;
-  display: inline-block;
-  height: 120px;
-  width: 120px;
-  background-color: orange;
-}
-.centerData {
-  margin-top: 20%;
-  margin-left: 15%;
-}
-.table th,
-.table td {
-  padding: 0.75rem;
-  background-color: #e9ecf5db;
-  vertical-align: top;
-}
-.centerRecipe {
-    margin-top: 20%;
-    margin-left: 0%;
-}
-.alignTextRecipe{
-    font-size: 20px;
-    font-weight: 600;
-    margin-left: 1%;
-    margin-top: 1%;
-}
-.table-bordered th, .table-bordered td {
-    /* border: 1px solid #dee2e6; */
-}
-</style>

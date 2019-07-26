@@ -22,6 +22,7 @@ const router = new Router({
     },
     {
       path: "/receitas",
+      name: "receitas",
       component: Recipes,
     },
   ],

@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     valid() {
-      if (this.user == "Teste" && this.password == "123") {
+      if (this.user == "testeusername" && this.password == "testesenha") {
         this.$router.push({ path: "/receitas" });
       } else {
         Swal({

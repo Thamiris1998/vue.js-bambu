@@ -385,21 +385,12 @@ label.title-items {
 	border: 0;
 }
 
-/* MODAL */
-.modal-header {
-	background-color: #2F4F98;
-	color: #FFFFFF;
-	border-radius: 4px 4px 0 0;
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #23e63b;
+    background-color: #23e63b;
 }
 
-.modal-header h3,
-.modal-header .close {
-	color: #FFFFFF;
-}
-
-#photo-detail-modal .modal-body img {
-	width: 100% !important;
-}
 
 
 .swal2-popup {
@@ -456,4 +447,139 @@ label.title-items {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center
+}
+
+
+.titleTop {
+	font-family: unset;
+	font-weight: bold;
+	font-size: 22px;
+	color: black;
+	padding-top: 20px;
+	padding-bottom: 15px;
+  }
+  
+  .alignTextValuePreparation {
+	color: black;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	font-weight: normal;
+  }
+  
+  .custom-control-label {
+	position: relative;
+	margin-top: 0px;
+	margin-bottom: 0;
+	vertical-align: top;
+  }
+  
+  label {
+	color: black;
+	text-transform: unset;
+	font-size: 18px;
+  }
+  .colorDefault {
+	color: black;
+  }
+  .buttonPreparation {
+	font-weight: bold;
+	text-align: center;
+	background-color: orange;
+	line-height: 40px;
+	border-color: orange;
+	color: white;
+  }
+
+  .buttonFinished {
+	font-weight: bold;
+	text-align: center;
+	background-color: #23e63b;
+	line-height: 40px;
+	border-color: #23e63b;
+	color: white;
+  }
+
+  .buttonBackRecipeDetails {
+	padding-top: 10px;
+	padding-left: 20px;
+	font-size: 23px;
+	font-weight: bold;
+  }
+  .timeOfPreparation {
+	background-color: white;
+	color: black;
+	margin-left: 58%;
+  }
+  .textPrincipal {
+	margin-left: 43px;
+	text-align: initial;
+	padding-top: 17rem;
+  }
+  .alignDescription {
+	margin-left: 51px;
+	margin-top: -37px;
+	margin-bottom: 16px;
+  }
+  
+  .imageBackground {
+	width: 100%;
+	height: 32rem;
+	color: white;
+	background-position: 20% 93%;
+	background-size: cover;
+	-o-background-size: cover;
+  }
+
+  a, a:visited {
+    color: white;
+}
+.span-icon-m {
+  display: inline-block;
+  position: absolute;
+  left: 270px;
+}
+.circuloCinza {
+  border-radius: 100%;
+  display: inline-block;
+  height: 120px;
+  width: 120px;
+  background-color: #ccccca;
+}
+
+.viewRecipe{
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+}
+
+.circuloLaranja {
+  border-radius: 100%;
+  display: inline-block;
+  height: 120px;
+  width: 120px;
+  background-color: orange;
+}
+.centerData {
+  margin-top: 20%;
+  margin-left: 15%;
+}
+.table th,
+.table td {
+  padding: 0.75rem;
+  background-color: #e9ecf5db;
+  vertical-align: top;
+}
+.centerRecipe {
+    margin-top: 20%;
+    margin-left: 0%;
+}
+.alignTextRecipe{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+.table-bordered th, .table-bordered td {
+    /* border: 1px solid #dee2e6; */
 }

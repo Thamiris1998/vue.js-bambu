@@ -1,7 +1,7 @@
 #VUE-JS
 
 #INSTALAÇÃO
-- $ yarn install
+- $ yarn install 
 - $ yarn global add @vue/cli
 
 #CONFIGURAÇÕES
@@ -12,4 +12,8 @@
 
 #Para compilar projeto
 - $ yarn serve
+
+#Para fazer o Login na página inicial é necessário incluir a senha e o usuário, caso deseje alterar mude dentro do arquivo src/views/Login.vue
+- Usuário: testeusername 
+- Senha: testesenha
 

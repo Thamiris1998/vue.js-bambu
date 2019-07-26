@@ -16,3 +16,8 @@ Vue.filter("formattedDate", value => {
     var str = day + "/" + month + "/" + date.getFullYear() + " " +  hour + ":" + min;
     return str;
   });
+
+  Vue.filter("formattedDouble", value => {
+   return parseInt(value, 10);
+  });
+
