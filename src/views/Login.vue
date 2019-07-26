@@ -1,6 +1,6 @@
 
 <template>
-  <div class="imageBackground">
+  <div class="imageBackgroundLogin">
     <div class="container">
       <form>
         <div class="row ml-5 mb-5" style="padding-left: 25px;">
