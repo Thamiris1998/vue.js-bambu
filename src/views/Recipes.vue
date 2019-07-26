@@ -18,7 +18,16 @@
           >
         </div>
       </div>
+      <div class="col mr-2" style="text-align: right;">
+        <i class="fa fa-user-circle-o fa-2x" style="color:white;" aria-hidden="true"></i>
+        <br><font style="color:white;">
+          <router-link :to="{ name: 'login' }">Sair</router-link>
+          </font>
+      </div>
     </div>
+    <div class="row alignTextRecipe">
+      Últimos pedidos
+      </div>
     <v-client-table :columns="columns" :options="options" :data="data">
       <div slot="image" slot-scope="props">
         <div>
@@ -38,17 +47,20 @@
         <div style="color: #26ac26;">{{props.row.status}}</div>
       </div>
 
-      <div slot="data" slot-scope="props">
+      <div slot="date" slot-scope="props">
         <div class="circuloCinza">
-          <div class="centerData">{{props.row.data | formattedDate}}</div>
+          <div class="centerData">{{props.row.date | formattedDate}}</div>
         </div>
       </div>
-      <div slot="action" lot-scope="props">
+      <div slot="action" slot-scope="props">
         <div class="circuloLaranja"> 
-          <button v-on:click="openRecipeDetails(props.row._id)">Ver receita</button>
+          <div class="centerRecipe"><router-link :to="{ name: 'listRecipes', params: { id:props.row._id  } }">
+         <center class="viewRecipe">Ver<br>receita</center>
+      </router-link></div>
         </div>
       </div>
     </v-client-table>
+     <router-view />
     <loading-spinner v-bind:loading="loading"></loading-spinner>
   </div>
 </template>
@@ -70,7 +82,7 @@ export default {
       loading: false,
       searchItem: "",
       data: [],
-      columns: ["image", "description", "status", "data", "_id"],
+      columns: ["image", "description", "status", "date", "action"],
       options: {
         uniqueKey: "key",
         responseAdapter({ data }) {
@@ -94,7 +106,7 @@ export default {
           image: "",
           description: "",
           status: "",
-          data: "",
+          date: "",
           action: ""
         },
         perPageValues: [],
@@ -121,7 +133,6 @@ export default {
     getRecipes() {
       axios.get(`${process.env.VUE_APP_NODE}/findAll`).then(response => {
         this.data = response.data.recipes;
-        this.data._id = response.data.recipes._id.toString();
       });
     },
     openRecipeDetails(idRecipe){
@@ -146,6 +157,9 @@ export default {
 </script>
 
 <style>
+a, a:visited {
+    color: white;
+}
 .span-icon-m {
   display: inline-block;
   position: absolute;
@@ -158,6 +172,13 @@ export default {
   width: 120px;
   background-color: #ccccca;
 }
+
+.viewRecipe{
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+}
+
 .circuloLaranja {
   border-radius: 100%;
   display: inline-block;
@@ -166,14 +187,24 @@ export default {
   background-color: orange;
 }
 .centerData {
-  margin-top: 30%;
-  margin-left: 10%;
+  margin-top: 20%;
+  margin-left: 15%;
 }
 .table th,
 .table td {
   padding: 0.75rem;
   background-color: #e9ecf5db;
   vertical-align: top;
+}
+.centerRecipe {
+    margin-top: 20%;
+    margin-left: 0%;
+}
+.alignTextRecipe{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 1%;
+    margin-top: 1%;
 }
 .table-bordered th, .table-bordered td {
     /* border: 1px solid #dee2e6; */

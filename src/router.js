@@ -16,15 +16,13 @@ const router = new Router({
       component: Login,
     },
     {
+      path: "detalhes/:id",
+      name: "listRecipes",
+      component: RecipeDetails
+    },
+    {
       path: "/receitas",
       component: Recipes,
-      children: [
-        {
-          path: "detalhes/:id",
-          name: "listRecipes",
-          component: RecipeDetails
-        }
-      ]
     },
   ],
 });

@@ -1,5 +1,5 @@
 <template>
-<div>oi</div>
+<div style="font-size:100px;">oi</div>
 </template>
 <script>
 export default {
