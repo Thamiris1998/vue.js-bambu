@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <div style="background-color: black;">
+    <div style="margin-top: -16px;">
       <router-link to="/login" class="nav-link"></router-link>
     </div>
     <router-view />

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background-color: #f6f6f6;">
     <div
       class="imageBackground"
       style="padding-top: 20px;"
@@ -28,48 +28,41 @@
       </div>
     </div>
 
-    <div class="mt-4" style="padding-left: 43px; background-color: #ece8e8;">
+    <div class="mt-4" style="padding-left: 43px;">
       <h4 class="titleTop">Ingredientes</h4>
       <div class="colorDefault" v-for="(itemI, index) in this.recipe.ingredients" :key="index">
-        <div class="custom-control custom-checkbox custom-control-inline">
+        <div class="custom-control custom-checkbox custom-control-inline mb-2">
           <input
             type="checkbox"
             class="custom-control-input"
             :id="itemI"
             @change="addIngredients(index,$event.target.checked)"
           />
-          <label class="custom-control-label" :for="itemI">{{itemI}}</label>
+          <label style="padding-left: 15px;" class="custom-control-label" :for="itemI">{{itemI}}</label>
         </div>
       </div>
     </div>
 
     <div class="mt-4" style="padding-left: 43px; background-color: white;">
       <h4 class="titleTop">Modo de preparo</h4>
-      <div
-        class="colorDefault"
-        v-for="(itemP,index) in this.recipe.methodOfPreparation"
-        :key="index"
-      >
-        <div class="custom-control custom-checkbox custom-control-inline">
-          <input
-            type="checkbox"
-            class="custom-control-input"
-            :id="index"
-            @change="addPreparation(index,$event.target.checked)"
-          />
-          <label class="col-1 custom-control-label" :for="index">Passo {{itemP.step}}</label>
-          <div class="row" style="margin-top: 2%;margin-left: -19%;">
-            <label class="alignTextValuePreparation">{{itemP.value}}</label>
-          </div>
+     
+      <div class="colorDefault" v-for="(itemP,index) in this.recipe.methodOfPreparation" :key="index">
+        <div class="custom-control custom-checkbox custom-control-inline row ml-1">
+          <input type="checkbox" class="custom-control-input" :id="index"
+            @change="addPreparation(index,$event.target.checked)"/>
+             
+          <label class="col-5 custom-control-label" style="font-weight: bold;" :for="index">Passo {{itemP.step}}</label>
+         
+            <label class="alignTextValuePreparation ml-3">{{itemP.value}}</label>
         </div>
       </div>
     </div>
     <div class="row mt-3 mb-3" style="padding-left: 43px;">
-      <div class="col-10">
+      <div class="col-9 mb-3">
         <label>Status {{valueProgress | formattedDouble}} % pronto e minuto(s) {{totalHour}} utilizado(s)</label>
-        <b-progress :value="valueProgress" variant="warning" striped :animated="animate"></b-progress>
+        <b-progress :value="valueProgress" variant="success" striped :animated="animate"></b-progress>
       </div>
-      <div class="col">
+      <div class="col mt-4">
         <button
           v-show="!started"
           type="button"
@@ -167,6 +160,15 @@ export default {
       this.stop = true;
     },
     finishedPreparation(){
+      if (this.itensPreparation.length != this.recipe.methodOfPreparation.length) {
+        Swal.fire({
+          text:
+            "Para finalizar a preparação, certifique-se de que você tem todos os passos do modo de preparo selecionados!",
+          confirmButtonText: "Entendi",
+          showCancelButton: false,
+          showCloseButton: true
+        });
+      }else{
       this.stopCronometro();
       Swal.fire({
           title: "OBRIGADO",
@@ -175,13 +177,13 @@ export default {
           showCancelButton: false,
           showCloseButton: true
         });
-
+      }
     },
     startPreparation() {
       if (this.itensIngredients.length != this.recipe.ingredients.length) {
         Swal.fire({
           text:
-            "Para iniciar a preparação, certifique-se de que você tem todos os itens selecionados!",
+            "Para iniciar a preparação, certifique-se de que você tem todos os ingredientes selecionados!",
           confirmButtonText: "Entendi",
           showCancelButton: false,
           showCloseButton: true

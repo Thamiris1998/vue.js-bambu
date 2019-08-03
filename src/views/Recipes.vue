@@ -1,24 +1,25 @@
 <template>
-  <div>
-    <div class="row" style="background-color: black;height: 65px;padding-left: 20px;">
+  <div style="background-color: white;">
+    <div class="row" style="background-color: #4b4848;height: 65px;padding-left: 20px;">
       <div class="col-2 mt-3">
         <img src="../assets/images/logo-coco-bambu-mini.png">
       </div>
-      <div class="col mt-3">
+      <div class="col mt-2">
         <div class="form-group">
           <span class="span-icon-m">
             <img src="../assets/images/icon-busca.png">
           </span>
           <input
-            class="form-control"
+            class="form-control1"
             type="text"
+            style="font-style: italic;padding-left: 10px;"
             v-model="searchItem"
             v-on:keyup="doFilter(searchItem)"
             placeholder="Buscar receita..."
           >
         </div>
       </div>
-      <div class="col mr-2" style="text-align: right;">
+      <div class="col mr-2 mt-1" style="text-align: right;">
         <i class="fa fa-user-circle-o fa-2x" style="color:white;" aria-hidden="true"></i>
         <br><font style="color:white;">
           <router-link :to="{ name: 'login' }">Sair</router-link>
@@ -35,7 +36,7 @@
         </div>
       </div>
 
-      <div style="width: 80%;" slot="description" slot-scope="props">
+      <div style="width: 100%;" slot="description" slot-scope="props">
         <div>
           <h5>{{props.row.name}}</h5>
           <br>
@@ -44,7 +45,7 @@
       </div>
 
       <div slot="status" slot-scope="props">
-        <div style="color: #26ac26;">{{props.row.status}}</div>
+        <div style="color: rgb(94, 192, 94);text-align: center;padding-top: 50px;">{{props.row.status}}</div>
       </div>
 
       <div slot="date" slot-scope="props">
@@ -116,7 +117,7 @@ export default {
           {
             name: "receipefilter",
             callback(row, query) {
-              return row.name.indexOf(query) > -1;
+              return row.name.toUpperCase().indexOf(query.toUpperCase()) > -1;
             }
           }
         ]

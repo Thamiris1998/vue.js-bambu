@@ -16,7 +16,7 @@ const router = new Router({
       component: Login,
     },
     {
-      path: "detalhes/:id",
+      path: "/detalhes/:id",
       name: "listRecipes",
       component: RecipeDetails
     },

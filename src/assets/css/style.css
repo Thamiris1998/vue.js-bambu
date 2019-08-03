@@ -337,7 +337,7 @@ a:focus,
 
 label {
 	color: #00A3F2;
-	font-weight: 700;
+	font-weight: 600;
 	text-transform: uppercase;
 	font-size: 0.8rem;
 	margin-right: 164px;
@@ -385,13 +385,30 @@ label.title-items {
 	border: 0;
 }
 
+
 .custom-control-input:checked ~ .custom-control-label::before {
-    color: #fff;
-    border-color: #23e63b;
-    background-color: #23e63b;
+    border-color: #4de360;
+    background-color: #4de360;
+    border-radius: 50px;
+    width: 30px;
+    margin-left: -10px;
+    height: 27px;
 }
 
-
+.custom-control-label::before {
+    width: 30px;
+    margin-left: -10px;
+    height: 27px;
+    position: absolute;
+    top: 0.25rem;
+    left: -1.5rem;
+    display: block;
+    pointer-events: none;
+    content: "";
+    background-color: #fff;
+    border: #adb5bd solid 1px;
+    border-radius: 50px ! important;
+}
 
 .swal2-popup {
 	font-size: 12px !important;
@@ -457,6 +474,7 @@ label.title-items {
 	color: black;
 	padding-top: 20px;
 	padding-bottom: 15px;
+	text-transform: none;
   }
   
   .alignTextValuePreparation {
@@ -486,16 +504,20 @@ label.title-items {
 	font-weight: bold;
 	text-align: center;
 	background-color: orange;
-	line-height: 40px;
+	line-height: 30px;
+    width: 160px;
 	border-color: orange;
 	color: white;
+	text-transform: none;
   }
 
   .buttonFinished {
+	text-transform: none;
 	font-weight: bold;
 	text-align: center;
 	background-color: #23e63b;
-	line-height: 40px;
+	line-height: 30px;
+    width: 160px;
 	border-color: #23e63b;
 	color: white;
   }
@@ -535,13 +557,14 @@ label.title-items {
     color: white;
 }
 .span-icon-m {
-  display: inline-block;
-  position: absolute;
-  left: 270px;
+		display: inline-block;
+		position: absolute;
+		left: 470px;
+		padding-top: 5px;
 }
 .circuloCinza {
+  margin-top: 50px;
   border-radius: 100%;
-  display: inline-block;
   height: 120px;
   width: 120px;
   background-color: #ccccca;
@@ -551,23 +574,25 @@ label.title-items {
   font-weight: bold;
   color: white;
   font-size: 20px;
+  padding-top: 25px;
 }
 
 .circuloLaranja {
+  margin-top: 50px;
   border-radius: 100%;
-  display: inline-block;
   height: 120px;
   width: 120px;
   background-color: orange;
 }
 .centerData {
+  padding-top: 40px;
   margin-top: 20%;
   margin-left: 15%;
 }
 .table th,
 .table td {
   padding: 0.75rem;
-  background-color: #e9ecf5db;
+  background-color: #fff;
   vertical-align: top;
 }
 .centerRecipe {
@@ -578,8 +603,66 @@ label.title-items {
     font-size: 20px;
     font-weight: 600;
     margin-left: 1%;
-    margin-top: 1%;
+	margin-top: 1%;
+	background-color: white;
 }
 .table-bordered th, .table-bordered td {
     /* border: 1px solid #dee2e6; */
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ffffff;
+}
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    background-color: white;
+    -webkit-overflow-scrolling: touch;
+}
+
+.col-md-12 {
+    -ms-flex: 0 0 100%;
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+    background-color: white;
+}
+.table-bordered th, .table-bordered td {
+    border: 1px solid #ffffff;
+}
+
+
+
+.progress {
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    font-size: 0.75rem;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+}
+
+
+.form-control1 {
+    width: 500px;
+    display: block;
+    height: calc(4.5em + 0.7rem + -38px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border: solid #ffffff;
+    border-radius: initial;
+}
+
+.custom-control-label::after {
+    position: absolute;
+    top: 0.20rem;
+    left: -2.5rem;
+    display: block;
+    width: 40px;
+    height: 30px;
+    content: "";
+    background: no-repeat 50% / 50% 50%;
 }
